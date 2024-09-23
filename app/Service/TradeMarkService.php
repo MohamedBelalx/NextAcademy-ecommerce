@@ -2,6 +2,8 @@
 
 namespace App\Service;
 
+use App\DTO\TradeMarkDTO;
+use App\Http\Requests\TradeMarkRequest;
 use App\Repository\Interface\ITradeMarkRepository;
 
 class TradeMarkService
@@ -12,8 +14,11 @@ class TradeMarkService
         $this->tradeMarkRepository = $tradeMarkRepository;
     }
 
-    public function store()
+    public function store(TradeMarkDTO $tradeMarkDTO)
     {
-        $this->tradeMarkRepository->store();
+        $this->tradeMarkRepository->store($tradeMarkDTO);
+    }
+    public function all(){
+        return $this->tradeMarkRepository->all();
     }
 }

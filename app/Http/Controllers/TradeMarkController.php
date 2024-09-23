@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\DTO\TradeMarkDTO;
+use App\Http\Requests\TradeMarkRequest;
 use App\Service\TradeMarkService;
 use Illuminate\Http\Request;
 
@@ -17,7 +19,8 @@ class TradeMarkController extends Controller
      */
     public function index()
     {
-        //
+        $tradeMarks = $this->tradeMarkService->all();
+        return view('trademark.index', ['tradeMarks' => $tradeMarks]);
     }
 
     /**
@@ -31,9 +34,10 @@ class TradeMarkController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TradeMarkRequest $request)
     {
-        $this->tradeMarkService->store();
+        $this->tradeMarkService->store(TradeMarkDTO::from($request));
+        return redirect()->route('trademark.index');
     }
 
     /**

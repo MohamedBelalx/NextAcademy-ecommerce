@@ -80,6 +80,7 @@
                     <div class="col-md-4">
                         <ul class="list-group">
                             <li class="list-group-item"><a href="{{route('trademark.create')}}">Create Trade Mark</a></li>
+                            <li class="list-group-item"><a href="{{route('trademark.index')}}">Show Trade Mark</a></li>
                             <li class="list-group-item">A second item</li>
                             <li class="list-group-item">A third item</li>
                             <li class="list-group-item">A fourth item</li>

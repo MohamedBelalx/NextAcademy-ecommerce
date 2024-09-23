@@ -11,7 +11,8 @@
         </div>
         @endif
 
-        <form action="">
+        <form action="{{route('trademark.store')}}" method="POST">
+            @csrf
             <div class="mt-3">
                 <label for="" class="form-label">Enter TradeMark Title</label>
                 <input type="text" class="form-control" name="title">

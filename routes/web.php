@@ -23,3 +23,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/trademark/create', [TradeMarkController::class, 'create'])->name('trademark.create');
+Route::get('/trademark/index', [TradeMarkController::class, 'index'])->name('trademark.index');
+Route::post('/trademark/store', [TradeMarkController::class, 'store'])->name('trademark.store');

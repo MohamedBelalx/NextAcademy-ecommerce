@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TradeMark extends Model
 {
     use HasFactory;
-    protected $table = 'trade_marks';
+    protected $table = 'trade_mark';
     protected $fillable = ['title'];
 }
