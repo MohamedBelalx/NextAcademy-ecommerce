@@ -3,7 +3,6 @@
 namespace App\Repository\Interface;
 
 use App\DTO\TradeMarkDTO;
-use App\Http\Requests\TradeMarkRequest;
 
 interface ITradeMarkRepository
 {
