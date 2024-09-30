@@ -16,6 +16,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">title</th>
+                    <th scope="col">actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,8 @@
                 <tr>
                     <th scope="row">{{$mark->id}}</th>
                     <td>{{$mark->title}}</td>
+                    <td><a href="{{route('trademark.destroy',['id' => $mark->id])}}">Delete</a></td>
+                    <td><a href="{{route('trademark.edit',['id' => $mark->id])}}">Edit</a></td>
                 </tr>
                 @endforeach
 

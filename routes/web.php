@@ -25,3 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/trademark/create', [TradeMarkController::class, 'create'])->name('trademark.create');
 Route::get('/trademark/index', [TradeMarkController::class, 'index'])->name('trademark.index');
 Route::post('/trademark/store', [TradeMarkController::class, 'store'])->name('trademark.store');
+Route::get('/trademark/destroy/{id}', [TradeMarkController::class, 'destroy'])->name('trademark.destroy');
+Route::get('/trademark/edit/{id}', [TradeMarkController::class, 'edit'])->name('trademark.edit');
+Route::post('/trademark/update/{id}', [TradeMarkController::class, 'update'])->name('trademark.update');

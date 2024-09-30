@@ -53,15 +53,16 @@ class TradeMarkController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('trademark.edit', ['tradeMark' => $this->tradeMarkService->findById($id)]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TradeMarkRequest $request, string $id)
     {
-        //
+        $this->tradeMarkService->update(TradeMarkDTO::from($request), $id);
+        return redirect()->route('trademark.index');
     }
 
     /**
@@ -69,6 +70,7 @@ class TradeMarkController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->tradeMarkService->destroy($id);
+        return redirect()->back();
     }
 }

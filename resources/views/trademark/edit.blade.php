@@ -11,7 +11,7 @@
         </ul>
     </div>
     @endif
-    <div class="card-header">Create TradeMark</div>
+    <div class="card-header">Update TradeMark</div>
 
     <div class="card-body">
         @if (session('status'))
@@ -20,13 +20,13 @@
         </div>
         @endif
 
-        <form action="{{route('trademark.store')}}" method="POST">
+        <form action="{{route('trademark.update',['id' => $tradeMark->id])}}" method="POST">
             @csrf
             <div class="mt-3">
                 <label for="" class="form-label">Enter TradeMark Title</label>
-                <input type="text" class="form-control" name="title">
+                <input type="text" class="form-control" name="title" value="{{$tradeMark->title}}">
             </div>
-            <button role="submit" class="btn btn-dark w-100 mt-3">Create</button>
+            <button role="submit" class="btn btn-dark w-100 mt-3">Update</button>
         </form>
     </div>
 </div>

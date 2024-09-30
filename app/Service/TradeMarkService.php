@@ -18,7 +18,24 @@ class TradeMarkService
     {
         $this->tradeMarkRepository->store($tradeMarkDTO);
     }
-    public function all(){
+
+    public function update(TradeMarkDTO $tradeMarkDTO, String $id)
+    {
+        $this->tradeMarkRepository->update($tradeMarkDTO, $id);
+    }
+
+    public function all()
+    {
         return $this->tradeMarkRepository->all();
+    }
+
+    public function destroy(string $id)
+    {
+        return $this->tradeMarkRepository->destroy($id);
+    }
+
+    public function findById(string $id)
+    {
+        return $this->tradeMarkRepository->findById($id);
     }
 }
