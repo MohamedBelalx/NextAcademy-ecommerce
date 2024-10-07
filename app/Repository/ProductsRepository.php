@@ -33,4 +33,8 @@ class ProductsRepository implements IProductsRepository
     {
         return Products::findOrFail($id);
     }
+    public function getProductsByTradeMarkId(string $id)
+    {
+        return Products::where('trade_mark_id', $id)->get();
+    }
 }

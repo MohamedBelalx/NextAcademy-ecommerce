@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\TradeMarkController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -15,13 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class, 'index'])->name('main');
+Route::get('/products/tradmark/{id}', [FrontController::class, 'showByTradeMarkId'])->name('products.tradmark.show');
 
-Auth::routes();
+// cart routes
+Route::get('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
 // trademark routes
 Route::get('/trademark/create', [TradeMarkController::class, 'create'])->name('trademark.create');
 Route::get('/trademark/index', [TradeMarkController::class, 'index'])->name('trademark.index');

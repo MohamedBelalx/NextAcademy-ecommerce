@@ -37,4 +37,7 @@ class ProductsService
     {
         return $this->productsRepository->findById($id);
     }
+    public function getProductsByTradeMarkId(string $id){
+        return $this->productsRepository->getProductsByTradeMarkId($id);
+    }
 }

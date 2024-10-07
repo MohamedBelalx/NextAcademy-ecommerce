@@ -11,4 +11,5 @@ interface IProductsRepository
     public function all();
     public function destroy(String $id);
     public function findById(String $id);
+    public function getProductsByTradeMarkId(string $id);
 }
