@@ -22,6 +22,9 @@ Route::get('/products/tradmark/{id}', [FrontController::class, 'showByTradeMarkI
 
 // cart routes
 Route::get('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart/show', [CartController::class, 'show'])->name('cart.show');
+Route::get('/cart/delete/{id}', [CartController::class, 'delete'])->name('cart.delete');
+Route::get('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
