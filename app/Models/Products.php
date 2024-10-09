@@ -15,4 +15,8 @@ class Products extends Model
     {
         return $this->belongsTo(TradeMark::class, 'trade_mark_id');
     }
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetails::class, 'product_id');
+    }
 }

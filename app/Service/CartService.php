@@ -29,4 +29,13 @@ class CartService
     {
         return Cart::updateItem($id, ['quantity' => $quantity]);
     }
+    public function getDetails()
+    {
+        return Cart::getDetails();
+    }
+
+    public function reset()
+    {
+        return Cart::reset();
+    }
 }

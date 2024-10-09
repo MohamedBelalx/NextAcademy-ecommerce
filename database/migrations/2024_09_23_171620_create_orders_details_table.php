@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('merchant_id');
+            $table->foreign('merchant_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('order_id')->references('id')->on('orders');
             $table->integer('quantity');

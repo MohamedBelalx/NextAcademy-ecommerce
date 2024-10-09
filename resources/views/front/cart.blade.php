@@ -30,5 +30,8 @@
         @endforeach
     </tbody>
 </table>
-
+<div class="w-100">
+    <h1>Total amout of order is : ${{$details->total}}</h1>
+    <a href="{{route('order.place')}}" class="btn btn-dark">place order</a>
+</div>
 @endsection

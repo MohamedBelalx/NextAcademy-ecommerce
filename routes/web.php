@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TradeMarkController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontController::class, 'index'])->name('main');
 Route::get('/products/tradmark/{id}', [FrontController::class, 'showByTradeMarkId'])->name('products.tradmark.show');
+// orders routes
 
+Route::get('/order/place', [OrderController::class, 'place'])->name('order.place');
+Route::get('/order/show', [OrderController::class, 'show'])->name('order.show');
 // cart routes
 Route::get('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart/show', [CartController::class, 'show'])->name('cart.show');
@@ -38,7 +42,6 @@ Route::post('/trademark/update/{id}', [TradeMarkController::class, 'update'])->n
 
 
 // products routes
-
 Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');
 Route::get('/products/index', [ProductsController::class, 'index'])->name('products.index');
 Route::post('/products/store', [ProductsController::class, 'store'])->name('products.store');

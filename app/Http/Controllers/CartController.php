@@ -26,11 +26,12 @@ class CartController extends Controller
 
     public function show()
     {
-        // dd( $this->cartService->getCart());
+        // dd($this->cartService->getDetails());
         return view('front.cart', [
             'cart' => $this->cartService->getCart(),
             'tradeMarks' => $this->tradeMarkService->all(),
-            'cartTotalItems' => $this->cartService->getTotalItems()
+            'cartTotalItems' => $this->cartService->getTotalItems(),
+            'details' => $this->cartService->getDetails(),
         ]);
     }
 
